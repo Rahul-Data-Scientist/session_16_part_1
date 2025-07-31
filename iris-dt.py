@@ -8,7 +8,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Setting uri scheme -> agar bhool gaye ho tho session 15 lecture ke timestamp 1:21:00 pe jaao.
-mlflow.set_tracking_uri('http://127.0.0.1:5000')
+mlflow.set_tracking_uri('https://dagshub.com/Rahul-Data-Scientist/session_16_part_1.mlflow')
+
+import dagshub
+dagshub.init(repo_owner='Rahul-Data-Scientist', repo_name='session_16_part_1', mlflow=True)
 
 # Load the iris dataset
 iris = load_iris()
@@ -20,6 +23,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Define the parameters for the Random Forest model
 max_depth = 10
+
+mlflow.set_experiment('iris-dt')
 
 # Start an MLflow run
 with mlflow.start_run():

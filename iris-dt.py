@@ -50,7 +50,7 @@ with mlflow.start_run():
     mlflow.log_artifact(__file__)
 
     # logging the model
-    mlflow.sklearn.log_model(dt, name = 'Decision Tree')
+    mlflow.sklearn.log_model(dt, artifact_path = "Decision-Tree")
     # Waise hum yeh bhi kar sakte the - mlflow.log_model(dt, 'Decision Tree')
     # But, since yeh model sklearn se aaya hai, so mlflow.sklearn karne se mlflow iss model ka aur useful metadata leke aata hai as you can see in the ui.
 

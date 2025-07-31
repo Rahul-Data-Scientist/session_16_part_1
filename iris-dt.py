@@ -22,7 +22,7 @@ y = iris.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Define the parameters for the Random Forest model
-max_depth = 10
+max_depth = 100
 
 mlflow.set_experiment('iris-dt')
 
@@ -50,7 +50,7 @@ with mlflow.start_run():
     mlflow.log_artifact(__file__)
 
     # logging the model
-    mlflow.sklearn.log_model(dt, artifact_path = "Decision-Tree")
+    mlflow.sklearn.log_model(dt, artifact_path = "Decision Tree")
     # Waise hum yeh bhi kar sakte the - mlflow.log_model(dt, 'Decision Tree')
     # But, since yeh model sklearn se aaya hai, so mlflow.sklearn karne se mlflow iss model ka aur useful metadata leke aata hai as you can see in the ui.
 

@@ -10,6 +10,9 @@ import seaborn as sns
 # Setting uri scheme -> agar bhool gaye ho tho session 15 lecture ke timestamp 1:21:00 pe jaao.
 mlflow.set_tracking_uri('https://dagshub.com/Rahul-Data-Scientist/session_16_part_1.mlflow')
 
+import dagshub
+dagshub.init(repo_owner='Rahul-Data-Scientist', repo_name='session_16_part_1', mlflow=True)
+
 # Load the iris dataset
 iris = load_iris()
 X = iris.data
